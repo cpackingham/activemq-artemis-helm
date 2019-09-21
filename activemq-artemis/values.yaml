@@ -7,7 +7,7 @@ image:
   # image.tag is the ActiveMQ Artemis image's tag: https://hub.docker.com/r/vromero/activemq-artemis/tags
   # tag: 2.6.2
   # image.pullPolicy is the ActiveMQ Artemis image's pull policy
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   # image.pullSecrets optionally specify an array of imagePullSecrets.Secrets must be manually created in the namespace.
   # ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   pullSecrets: []
@@ -69,8 +69,8 @@ resources:
 
 # A load balander might confuse Minikube when installing with Helm and --wait
 # Probably this is only useful for minikube environments and CI
-loadbalancer:
-  enabled: true
+# loadbalancer:
+#   enabled: false
 
 ## Prometheus Exporters / Metrics
 ##
